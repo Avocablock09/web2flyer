@@ -19,6 +19,10 @@ Route::get('/',[homeController::class,'index']);
 Route::POST('/flyer',[homeController::class,'flyer']);
 
 Route::get('/vp',[VideoController::class,'index']);
+Route::get('/login',function(){
+    return view('login');
+});
+
 
 // Route::get('/', function () {
 //     return view('pages.homes');
