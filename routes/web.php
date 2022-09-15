@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\homeController;
+use App\Http\Controllers\VideoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[homeController::class,'index']);
 Route::POST('/flyer',[homeController::class,'flyer']);
+
+Route::get('/vp',[VideoController::class,'index']);
 
 // Route::get('/', function () {
 //     return view('pages.homes');

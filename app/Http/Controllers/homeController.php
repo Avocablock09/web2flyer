@@ -50,7 +50,7 @@ class homeController extends Controller
             'bagus_hendra'
         ],
         '11' => [
-            'Ws. Made Sudiasih',
+            'Ws. Made Sudiasih, S.AP',
             'made_sudiasih'
         ],
         '12' => [
