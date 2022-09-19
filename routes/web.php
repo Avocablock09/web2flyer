@@ -24,7 +24,17 @@ Route::get('/login',function(){
     return view('login');
 });
 
+Route::get('/admin',function(){
+    return view('admin.home');
+})->middleware('admin');
+
+Route::get('/jiangdao',[homeController::class,'pengisi']);
+
+
+
 Route::POST('/login',[LoginController::class,'login']);
+Route::POST('/logout',[LoginController::class,'logout']);
+
 
 // Route::get('/', function () {
 //     return view('pages.homes');

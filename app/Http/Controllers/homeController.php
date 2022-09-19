@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Jiangdao;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Barryvdh\Snappy\Facades\SnappyPdf;
@@ -61,6 +62,12 @@ class homeController extends Controller
     public function index(){
         return view(' pages.forms',[
             'data' => $this->jd_list
+        ]);
+    }
+    public function pengisi(){
+        $data = Jiangdao::all();
+        return view('admin.pengisi',[
+            'jiangdao' => $data
         ]);
     }
 

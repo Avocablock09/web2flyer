@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\accounts;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
@@ -14,21 +14,25 @@ class LoginController extends Controller
         return view('login');
     }
 
+    public function logout(){
+        Auth::logout();
+        return redirect('/');
+    }
+
     public function login(Request $request){
-        $request->validate([
-            'username' => 'required',
-            'password' => 'required',
+        $credential = $request->validate([
+            'email' => ['required'],
+            'password' => ['required'],
         ]);
 
-        if (Hash::check($request->password, accounts::first('password')->password)) {
-            return 'password sesuai';
+        if(Auth::attempt($credential)){
+            $request->session()->regenerate();
+            return redirect()->intended('/admin');
         }
         else{
-            return 'password tidak sesuai';
+            return 'failed';
         }
-        return back()->withErrors([
-            'password' => 'Wrong username or password',
-        ]);
+
         // if (Auth::attempt(['username' => $request->username, 'password' => $request->password])) {
         //     $request->session()->regenerate();
         //     return redirect()->intended('/');

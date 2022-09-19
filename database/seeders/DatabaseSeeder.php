@@ -16,9 +16,11 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        \App\Models\accounts::factory()->create([
-            'username' => 'avocablock',
-            'password' => bcrypt('rumahweb=vscode')
+        \App\Models\User::factory()->create([
+            'email' => 'avocablock@gmail.com',
+            'password' => bcrypt('rumahweb=vscode'),
+            'isAdmin' => true
         ]);
+        $this->call(JiangdaoSeeder::class);
     }
 }
