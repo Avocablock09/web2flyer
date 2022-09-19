@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+    public function username(){
+        return 'username';
+    }
     //
     public function index(){
         return view('login');
@@ -21,7 +24,7 @@ class LoginController extends Controller
 
     public function login(Request $request){
         $credential = $request->validate([
-            'email' => ['required'],
+            'username' => ['required'],
             'password' => ['required'],
         ]);
 

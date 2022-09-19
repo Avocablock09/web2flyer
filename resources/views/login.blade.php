@@ -17,7 +17,7 @@
                 </div>
                 <div class="form-group mt-2">
                     <label for="username">USERNAME</label>
-                    <input class="form-control" type="text" name="email">
+                    <input class="form-control" type="text" name="username">
                 </div>
                 <div class="form-group mt-1">
                     <label for="password">PASSWORD</label>
