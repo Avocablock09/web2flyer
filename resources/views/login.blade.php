@@ -6,18 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Document</title>
+    <style>
+        @media screen and (min-height: 600px) {
+            body {
+                min-height: 100vh;
+            }
+        }
+    </style>
 </head>
-<body class="text-center d-flex align-items-center" style="min-height: 100vh;" onload='document.f1.email.focus()'>
+<body class="text-center d-flex align-items-center">
     <div class="container-xl">
         <main class="d-flex justify-content-center">
-            <form action="/login" method="POST" name='f1'>
+            <form action="/login" method="POST">
                 @csrf
                 <div class="text-center form-group">
                     <b style="font-size:2rem">LOGIN</b>
                 </div>
                 <div class="form-group mt-2">
                     <label for="username">USERNAME</label>
-                    <input class="form-control" type="text" name="username">
+                    <input class="form-control" type="text" name="username" autofocus>
                 </div>
                 <div class="form-group mt-1">
                     <label for="password">PASSWORD</label>
